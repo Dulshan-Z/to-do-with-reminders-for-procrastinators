@@ -1,17 +1,23 @@
 package com.nibm.procrastinatorstodo
 
+import android.content.Intent
 import android.os.Bundle
-import androidx.activity.enableEdgeToEdge
+import android.os.Handler
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
+
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.`splash_screen`)
 
         supportActionBar?.hide()
+
+        Handler().postDelayed({
+            val intent= Intent(this@MainActivity,HomePage::class.java)
+            startActivity(intent)
+            finish()
+        },3000)
 
         }
 
